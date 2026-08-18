@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotels — Pete & Elise Italy Honeymoon</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="page-header">
+    <div class="page-header-overlay"></div>
+    <div class="page-header-content">
+      <a href="index.html" class="back-link">← Home</a>
+      <h1>Hotels</h1>
+      <p>Pete &amp; Elise — Italy Honeymoon</p>
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="overview.html" class="nav-link">Overview</a></li>
+      <li><a href="transport.html" class="nav-link">Transport</a></li>
+      <li><a href="hotels.html" class="nav-link active">Hotels</a></li>
+      <li><a href="restaurants.html" class="nav-link">Restaurants</a></li>
+      <li><a href="excursions.html" class="nav-link">Excursions</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-main">
+
+    <!-- Upload Section -->
+    <div class="page-section">
+      <div class="section-header">
+        <span class="section-icon">📤</span>
+        <h2>Upload Reservation</h2>
+      </div>
+      <p class="section-desc">Drop a screenshot or image of a hotel confirmation. The system will read it and pull out check-in, check-out, address, and booking details.</p>
+
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-inner">
+          <div class="upload-icon">📎</div>
+          <p class="upload-label">Drop image here or <span class="upload-browse">click to browse</span></p>
+          <p class="upload-hint">Supports PNG, JPG, WEBP · Runs entirely in your browser</p>
+        </div>
+        <input type="file" id="file-input" accept="image/*" hidden />
+      </div>
+
+      <div class="ocr-status-bar">
+        <span id="ocr-status"></span>
+      </div>
+
+      <div id="raw-wrap" class="raw-wrap" style="display:none;">
+        <button class="btn-toggle-raw" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display==='none'?'block':'none'">
+          Toggle raw OCR text ▾
+        </button>
+        <pre id="raw-text" class="raw-text" style="display:none;"></pre>
+      </div>
+    </div>
+
+    <!-- Table Section -->
+    <div class="page-section">
+      <div class="section-header">
+        <span class="section-icon">🏨</span>
+        <h2>Hotels &amp; Stays</h2>
+      </div>
+      <div id="table-wrap">
+        <p class="no-data">No entries yet — upload an image above.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>💍 Pete & Elise — Italy Honeymoon</p>
+    <p><small>Amore, pasta, and la dolce vita 🇮🇹</small></p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+  <script src="app.js"></script>
+  <script src="uploader.js"></script>
+  <script>Uploader.init('hotels');</script>
+</body>
+</html>

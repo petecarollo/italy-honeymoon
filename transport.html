@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transfers — Pete & Elise Italy Honeymoon</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="page-header">
+    <div class="page-header-overlay"></div>
+    <div class="page-header-content">
+      <a href="index.html" class="back-link">← Home</a>
+      <h1>Transfers</h1>
+      <p>Pete &amp; Elise — Italy Honeymoon</p>
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="transport.html" class="nav-link active">Transfers</a></li>
+      <li><a href="stays.html" class="nav-link">Cities</a></li>
+      <li><a href="costs.html" class="nav-link">Costs</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-main page-main-wide">
+
+    <!-- PDF Download button -->
+    <div class="pdf-btn-wrap">
+      <button class="btn-pdf" id="btn-pdf" onclick="window.print()">⬇ Download PDF</button>
+    </div>
+
+    <div class="page-section">
+      <div class="section-header">
+        <span class="section-icon">✈️</span>
+        <h2>Your Transfers</h2>
+      </div>
+
+      <!-- Add buttons -->
+      <div class="add-type-btns">
+        <button class="add-type-btn" data-type="Flight" data-icon="✈️">
+          <span class="add-type-icon">✈️</span>
+          <span>Add Flight</span>
+        </button>
+        <button class="add-type-btn" data-type="Train" data-icon="🚂">
+          <span class="add-type-icon">🚂</span>
+          <span>Add Train</span>
+        </button>
+        <button class="add-type-btn" data-type="Transfer" data-icon="🚕">
+          <span class="add-type-icon">🚕</span>
+          <span>Add Transfer</span>
+        </button>
+        <button class="add-type-btn" data-type="Hopper" data-icon="🛫">
+          <span class="add-type-icon">🛫</span>
+          <span>Add Hopper</span>
+        </button>
+      </div>
+
+      <div id="transfers-display"></div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>💍 Pete & Elise — Italy Honeymoon</p>
+    <p><small>Amore, pasta, and la dolce vita 🇮🇹</small></p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+  <script src="app.js"></script>
+  <script src="db.js"></script>
+  <script src="file-reader.js"></script>
+  <script src="calendar.js"></script>
+  <script src="transfers.js"></script>
+</body>
+</html>
