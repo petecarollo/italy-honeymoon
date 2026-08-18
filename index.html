@@ -57,5 +57,14 @@
   </footer>
 
   <script src="app.js"></script>
+  <script src="db.js"></script>
+  <script>
+    // Auto-load seed data on first visit
+    TripDB.open().then(() => {
+      const s = document.createElement('script');
+      s.src = 'data-seed.js';
+      document.body.appendChild(s);
+    });
+  </script>
 </body>
 </html>
